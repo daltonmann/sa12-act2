@@ -6,7 +6,7 @@ def fetch_repo(username)
   JSON.parse(response.body)
 end
 
-def analyze_repositories(repositories)
+def analyze_repo(repositories)
   most_starred_repo = repositories.max_by { |repo| repo['stargazers_count'] }
   { name: most_starred_repo['name'],
     description: most_starred_repo['description'],
@@ -14,7 +14,7 @@ def analyze_repositories(repositories)
     url: most_starred_repo['html_url'] }
 end
 
-def display_most_starred_repository(repo)
+def display_most_starred_repo(repo)
   puts "Name: #{repo[:name]}"
   puts "Description: #{repo[:description]}"
   puts "Stars: #{repo[:stars]}"
@@ -23,7 +23,7 @@ end
 
 # Example usage
 username = 'daltonmann'
-repositories = fetch_repo(username)
-most_starred_repo = analyze_repositories(repositories)
+repo = fetch_repo(username)
+most_starred_repo = analyze_repo(repo)
 puts "___Most Starred Repository of #{username}___"
-display_most_starred_repository(most_starred_repo)
+display_most_starred_repo(most_starred_repo)
