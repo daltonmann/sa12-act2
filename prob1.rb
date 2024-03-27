@@ -21,7 +21,7 @@ def display_most_starred_repo(repo)
   puts "URL: #{repo[:url]}"
 end
 
-# Example usage
+# Example
 username = 'daltonmann'
 repo = fetch_repo(username)
 most_starred_repo = analyze_repo(repo)

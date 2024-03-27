@@ -18,7 +18,7 @@ def display_top_five_cryptos(cryptos)
   end
 end
 
-# Example usage
+# Example
 crypto_data = fetch_crypto_data
 top_cryptos = top_five_cryptos(crypto_data)
 display_top_five_cryptos(top_cryptos)
